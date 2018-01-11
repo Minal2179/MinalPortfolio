@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="tabscontent">
+    <div class="tabscontent__item">
+      <div class="jumbotron">
+        {% for item in aboutme %}
+        <h1>{{ item.full_name}}</h1>
+        <p class="lead">{{ item.description }}</p>
+        {% endfor %}
+        <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
+      </div>
+    </div>
+    <div class="tabscontent__item">
+      <ul>
+        {% for object in experience_list %}
+          <li>{{ object.company_name }}</li>
+          <ol>
+            {% for item in experience_desc %}
+            <li>{{ item.description }}</li>
+            {% endfor %}
+          </ol>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="tabscontent__item">
+      <ul>
+        {% for object in project_list %}
+          <li>{{ object.title }}</li>
+          <li>{{ object.description }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <!-- <div class="tabscontent__item">
+      <ul>
+        {% for object in skill %}
+          <li>{{ object.title }}:{{ object.percentage }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="tabscontent__item">
+      <p>Hey I am here</p>
+    </div> -->
+    <button class="btn btn--back"><svg class="icon icon--caret"><use xlink:href="#icon-caret"></use></svg></button>
+  </div>
+{% endblock %}
+<!-- {% block aboutme %}
+  <div class="jumbotron">
+    {% for item in aboutme %}
+    <h1>{{ item.full_name}}</h1>
+    <p class="lead">{{ item.description }}</p>
+    {% endfor %}
+    <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
+  </div>
+{% endblock aboutme %}
+{% block workexperience %}
+  <ul>
+    {% for object in experience_list %}
+      <li>{{ object.company_name }}</li>
+      <ol>
+        {% for item in experience_desc %}
+          <li>{{ item.description }}</li>
+        {% endfor %}
+      </ol>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+{% block projects %}
+  <ul>
+    {% for object in project_list %}
+      <li>{{ object.title }}</li>
+      <li>{{ object.description }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+{% block skills %}
+  <ul>
+    {% for object in skill %}
+      <li>{{ object.title }}:{{ object.percentage }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+{% block contact %}
+  <p>Hey I am here!! talk to me whenever and wherever</p>
+{% endblock %} -->
